@@ -1,0 +1,76 @@
+:root {
+  color-scheme: dark light;
+  --main-background-color: #fff;
+  --main-color: #111;
+  --table-alternate-color: #eee;
+  --table-hover-color: #ddd;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --main-background-color: #111;
+    --main-color: #eee;
+    --table-alternate-color: #222;
+    --table-hover-color: #333;
+  }
+}
+
+html,
+body {
+  color: var(--main-color);
+  background-color: var(--main-background-color);
+}
+
+html {  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+body {
+  width: 60ch;
+  max-width: 60ch;
+  font-family: system-ui, sans-serif;
+  margin-block: 1rem;
+}
+
+h1 {
+  color: dodgerblue;
+  font-size: 1.25rem;
+}
+
+img,
+meter {
+  display: block;
+}
+
+code,
+label {
+  color: deeppink;
+}
+
+code {
+  font-size: 1rem;
+  font-family: ui-monospace, monospace;
+}
+
+table {
+  width: 100%;
+  outline: solid 1px;
+}
+
+thead {
+  background-color: var(--table-hover-color);    
+}
+
+th {
+  padding-block: .5rem;
+}
+
+tbody > tr:nth-of-type(2n) {
+  background-color: var(--table-alternate-color);
+}
+
+tbody > tr:hover {
+  background-color: var(--table-hover-color);  
+}
