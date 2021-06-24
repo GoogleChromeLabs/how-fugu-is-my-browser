@@ -74,3 +74,7 @@ tbody > tr:nth-of-type(2n) {
 tbody > tr:hover {
   background-color: var(--table-hover-color);
 }
+
+footer {
+  margin-block-start: 1rem;
+}
