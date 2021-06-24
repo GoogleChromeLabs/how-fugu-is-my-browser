@@ -1,0 +1,29 @@
+{
+  "name": "how-fugu-is-your-browser",
+  "version": "1.0.0",
+  "description": "A test app to determine what Project Fugu 🐡 APIs your browser supports.",
+  "scripts": {
+    "start": "npx http-server",
+    "fix": "npx prettier . --write",
+    "prepare": "shx cp -r ./node_modules/fugu-api-data/patterns.mjs ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tomayac/how-fugu-is-your-browser.git"
+  },
+  "keywords": [
+    "project-fugu"
+  ],
+  "author": "Thomas Steiner (tomac@google.com)",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/tomayac/how-fugu-is-your-browser/issues"
+  },
+  "homepage": "https://github.com/tomayac/how-fugu-is-your-browser#readme",
+  "devDependencies": {
+    "fugu-api-data": "^1.0.4",
+    "http-server": "^0.12.3",
+    "prettier": "^2.3.1",
+    "shx": "^0.3.3"
+  }
+}

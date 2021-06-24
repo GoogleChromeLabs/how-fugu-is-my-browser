@@ -21,7 +21,7 @@ body {
   background-color: var(--main-background-color);
 }
 
-html {  
+html {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -60,11 +60,11 @@ table {
 }
 
 thead {
-  background-color: var(--table-hover-color);    
+  background-color: var(--table-hover-color);
 }
 
 th {
-  padding-block: .5rem;
+  padding-block: 0.5rem;
 }
 
 tbody > tr:nth-of-type(2n) {
@@ -72,5 +72,5 @@ tbody > tr:nth-of-type(2n) {
 }
 
 tbody > tr:hover {
-  background-color: var(--table-hover-color);  
+  background-color: var(--table-hover-color);
 }
