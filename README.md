@@ -1,1 +1,1 @@
-# How Fugu 🐡 is your browser?
+# How Fugu 🐡 is my browser?

@@ -1,5 +1,5 @@
 {
-  "name": "how-fugu-is-your-browser",
+  "name": "how-fugu-is-my-browser",
   "version": "1.0.0",
   "description": "A test app to determine what Project Fugu 🐡 APIs your browser supports.",
   "scripts": {
@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/tomayac/how-fugu-is-your-browser.git"
+    "url": "git+https://github.com/tomayac/how-fugu-is-my-browser.git"
   },
   "keywords": [
     "project-fugu"
@@ -17,9 +17,9 @@
   "author": "Thomas Steiner (tomac@google.com)",
   "license": "Apache-2.0",
   "bugs": {
-    "url": "https://github.com/tomayac/how-fugu-is-your-browser/issues"
+    "url": "https://github.com/tomayac/how-fugu-is-my-browser/issues"
   },
-  "homepage": "https://github.com/tomayac/how-fugu-is-your-browser#readme",
+  "homepage": "https://github.com/tomayac/how-fugu-is-my-browser#readme",
   "devDependencies": {
     "fugu-api-data": "^1.0.4",
     "http-server": "^0.12.3",
