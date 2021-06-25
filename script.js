@@ -66,6 +66,9 @@ window.addEventListener('load', async () => {
   tbody.parentNode.hidden = false;
 
   meter.max = totalValues;
+  meter.low = Math.floor(0.2 * totalValues);
+  meter.high = Math.floor(0.8 * totalValues);
+  meter.optimum = Math.floor(0.9 * totalValues);
   meter.value = trueValues;
   label.textContent = `${Math.floor((trueValues / totalValues) * 100)}%`;
   label.parentNode.hidden = false;
