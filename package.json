@@ -21,7 +21,7 @@
   },
   "homepage": "https://github.com/tomayac/how-fugu-is-my-browser#readme",
   "devDependencies": {
-    "fugu-api-data": "^1.0.4",
+    "fugu-api-data": "^1.1.0",
     "http-server": "^0.12.3",
     "prettier": "^2.3.1",
     "shx": "^0.3.3"

@@ -56,7 +56,10 @@ window.addEventListener('load', async () => {
     const td2 = document.createElement('td');
     tr.append(td1);
     tr.append(td2);
-    td1.textContent = api;
+    const a = document.createElement('a');
+    a.textContent = api;
+    a.href = value.documentation;
+    td1.append(a);
     td2.textContent = value.supported
       ? '✅'
       : value.supported === undefined
