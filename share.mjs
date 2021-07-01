@@ -4,28 +4,37 @@ const main = document.querySelector('main');
 const button = document.querySelector('button');
 const p = document.querySelector('p');
 
-let logo;
-let clone;
+let files;
 
-button.hidden = false;
+const clone = main.cloneNode(true);
+clone.querySelector('.meter').hidden = false;
+const logo = clone.querySelector('img');
+logo.addEventListener('load', async () => {
+  const blob = await createScreenshot();
+  files = [new File([blob], 'howfuguismybrowser_dev.png')];
+  button.hidden = false;
+});
+logo.src = 'fugu.png';
+
 button.addEventListener('click', () => {
-  clone = main.cloneNode(true);
-  clone.querySelector('.meter').hidden = false;
-  logo = clone.querySelector('img');
-  logo.addEventListener('load', async () => {
-    const blob = await createScreenshot();
-    const files = [new File([blob], 'howfuguismybrowser_dev.png')];
-    try {
-      await navigator.share({
-        url: location.href,
-        text: p.textContent,
-        files,
-      });
-    } catch (err) {
-      console.error(err.name, err.message);
-    }
+  console.log(navigator.canShare({
+    url: location.href,
+    text: p.textContent,
+    files,
+  }), {
+    url: location.href,
+    text: p.textContent,
+    files,
   });
-  logo.src = 'fugu.png';
+  try {
+    await navigator.share({
+      url: location.href,
+      text: p.textContent,
+      files,
+    });
+  } catch (err) {
+    console.error(err.name, err.message);
+  }
 });
 
 const createScreenshot = async () => {
