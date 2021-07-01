@@ -12,7 +12,7 @@ let files;
   const logo = clone.querySelector('img');
   logo.addEventListener('load', async () => {
     document.body.append(clone);
-    const blob = await createScreenshot();
+    const blob = await createScreenshot(clone);
     clone.remove();
     logo.removeEventListener('load', createScreenshot);
     files = [new File([blob], 'howfuguismybrowser_dev.png')];
@@ -42,7 +42,7 @@ button.addEventListener('click', async () => {
   }
 });
 
-const createScreenshot = async () => {
+const createScreenshot = async (clone) => {
   const backgroundColor = getComputedStyle(
     document.documentElement,
   ).getPropertyValue('--main-background-color');
