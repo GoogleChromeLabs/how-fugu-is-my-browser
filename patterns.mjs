@@ -1,12 +1,12 @@
 export default {
-  'WebBluetooth': {
+  WebBluetooth: {
     regEx: /navigator\.bluetooth\.requestDevice\s*\(/g,
     where: 'JavaScript',
     supported: (async () => 'bluetooth' in navigator)(),
     featureDetection: `(async () => 'bluetooth' in navigator)()`,
     documentation: 'https://web.dev/bluetooth/',
   },
-  'WebUSB': {
+  WebUSB: {
     regEx: /navigator\.usb\.requestDevice\s*\(/g,
     where: 'JavaScript',
     supported: (async () => 'usb' in navigator)(),
@@ -50,7 +50,7 @@ export default {
     featureDetection: `(async () => 'contacts' in navigator)()`,
     documentation: 'https://web.dev/contact-picker/',
   },
-  'getInstalledRelatedApps': {
+  getInstalledRelatedApps: {
     regEx: /navigator\.getInstalledRelatedApps\s*\(/g,
     where: 'JavaScript',
     supported: (async () => 'getInstalledRelatedApps' in navigator)(),
@@ -73,7 +73,7 @@ export default {
     featureDetection: `(async () => 'periodicSync' in (await navigator.serviceWorker?.ready || self.registration))()`,
     documentation: 'https://web.dev/periodic-background-sync/',
   },
-  'Badging': {
+  Badging: {
     regEx: /navigator\.setAppBadge\s*\(/g,
     where: 'JavaScript',
     supported: (async () => 'setAppBadge' in navigator)(),
@@ -125,7 +125,7 @@ export default {
     documentation:
       'https://developers.google.com/web/updates/2016/04/credential-management-api',
   },
-  'WebOTP': {
+  WebOTP: {
     regEx: /transport\s*\:\s*\[["']sms["']\]/g,
     where: 'JavaScript',
     supported: (async () => 'OTPCredential' in self)(),
@@ -155,21 +155,21 @@ export default {
     featureDetection: `(async () => await (async () => { try { return !!await document.createElement("p").requestPointerLock({ unadjustedMovement: true }) } catch { return true } })())()`,
     documentation: 'https://web.dev/disable-mouse-acceleration/',
   },
-  'WebHID': {
+  WebHID: {
     regEx: /navigator\.hid\.requestDevice\s*\(/g,
     where: 'JavaScript',
     supported: (async () => 'hid' in navigator)(),
     featureDetection: `(async () => 'hid' in navigator)()`,
     documentation: 'https://web.dev/hid/',
   },
-  'WebSerial': {
+  WebSerial: {
     regEx: /navigator\.serial\.requestPort\s*\(/g,
     where: 'JavaScript',
     supported: (async () => 'serial' in navigator)(),
     featureDetection: `(async () => 'serial' in navigator)()`,
     documentation: 'https://web.dev/serial/',
   },
-  'WebNFC': {
+  WebNFC: {
     regEx: /new NDEFReader\s*\(/g,
     where: 'JavaScript',
     supported: (async () => 'NDEFReader' in self)(),
@@ -184,7 +184,7 @@ export default {
     documentation:
       'https://github.com/MicrosoftEdge/MSEdgeExplainers/blob/main/RunOnLogin/Explainer.md',
   },
-  'WebCodecs': {
+  WebCodecs: {
     regEx: /new MediaStreamTrackProcessor\s*\(/g,
     where: 'JavaScript',
     supported: (async () => 'MediaStreamTrackProcessor' in self)(),
@@ -227,14 +227,14 @@ export default {
     featureDetection: `(async () => 'ComputePressureObserver' in self)()`,
     documentation: 'https://web.dev/compute-pressure/',
   },
-  'Accelerometer': {
+  Accelerometer: {
     regEx: /new Accelerometer\s*\(/g,
     where: 'JavaScript',
     supported: (async () => 'Accelerometer' in self)(),
     featureDetection: `(async () => 'Accelerometer' in self)()`,
     documentation: 'https://web.dev/generic-sensor/',
   },
-  'Gyroscope': {
+  Gyroscope: {
     regEx: /new Gyroscope\s*\(/g,
     where: 'JavaScript',
     supported: (async () => 'Gyroscope' in self)(),
@@ -269,7 +269,7 @@ export default {
     featureDetection: `(async () => 'LinearAccelerationSensor' in self)()`,
     documentation: 'https://web.dev/generic-sensor/',
   },
-  'Magnetometer': {
+  Magnetometer: {
     regEx: /new Magnetometer\s*\(/g,
     where: 'JavaScript',
     supported: (async () => 'Magnetometer' in self)(),
@@ -312,21 +312,21 @@ export default {
     featureDetection: `(async () => 'getScreens' in self)()`,
     documentation: 'https://web.dev/multi-screen-window-placement/',
   },
-  'WebSocketStream': {
+  WebSocketStream: {
     regEx: /new WebSocketStream\s*\(/g,
     where: 'JavaScript',
     supported: (async () => 'WebSocketStream' in self)(),
     featureDetection: `(async () => 'WebSocketStream' in self)()`,
     documentation: 'https://web.dev/websocketstream/',
   },
-  'WebTransport': {
+  WebTransport: {
     regEx: /new WebTransport\s*\(/g,
     where: 'JavaScript',
     supported: (async () => 'WebTransport' in self)(),
     featureDetection: `(async () => 'WebTransport' in self)()`,
     documentation: 'https://web.dev/webtransport/',
   },
-  'Gamepad': {
+  Gamepad: {
     regEx: /navigator\.getGamepads\s*\(/g,
     where: 'JavaScript',
     supported: (async () => 'getGamepads' in navigator)(),
@@ -354,7 +354,7 @@ export default {
     featureDetection: `(async () => undefined)()`,
     documentation: 'https://web.dev/web-share-target/',
   },
-  'Shortcuts': {
+  Shortcuts: {
     regEx: /"shortcuts"/g,
     where: 'Web App Manifest',
     supported: (async () => undefined)(),

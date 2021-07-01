@@ -14,11 +14,12 @@ button.addEventListener('click', () => {
   logo = clone.querySelector('img');
   logo.addEventListener('load', async () => {
     const blob = await createScreenshot();
+    const files = [new File([blob], 'howfuguismybrowser_dev.png')];
     try {
       await navigator.share({
         url: location.href,
         text: p.textContent,
-        files: [blob],
+        files,
       });
     } catch (err) {
       console.error(err.name, err.message);
