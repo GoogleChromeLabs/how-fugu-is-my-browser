@@ -4,6 +4,7 @@
   --main-color: #111;
   --table-alternate-color: #eee;
   --table-hover-color: #ddd;
+  --link-color: rgb(0, 0, 238);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -12,6 +13,7 @@
     --main-color: #eee;
     --table-alternate-color: #222;
     --table-hover-color: #333;
+    --link-color: rgb(158, 158, 255);
   }
 }
 
@@ -39,8 +41,11 @@ h1 {
   font-size: 1.25rem;
 }
 
-img,
-meter {
+a {
+  color: var(--link-color);
+}
+
+img {
   display: block;
 }
 
@@ -77,4 +82,28 @@ tbody > tr:hover {
 
 footer {
   margin-block-start: 1rem;
+}
+
+.meter {
+  height: 8px;
+  width: 80px;
+  background: #555;
+  border-radius: 4px;
+}
+.meter > span {
+  display: block;
+  height: 100%;
+  border-top-right-radius: 2px;
+  border-bottom-right-radius: 2px;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+  background-color: green;
+}
+
+.meter.orange > span {
+  background-color: orange;
+}
+
+.meter.red > span {
+  background-color: red;
 }

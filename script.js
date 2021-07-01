@@ -3,6 +3,7 @@ import patterns from './patterns.mjs';
 // DOM references.
 const tbody = document.querySelector('tbody');
 const meter = document.querySelector('meter');
+const fakeMeter = document.querySelector('.meter');
 const label = document.querySelector('label');
 const code = document.querySelector('code');
 
@@ -68,13 +69,27 @@ window.addEventListener('load', async () => {
   }
   tbody.parentNode.hidden = false;
 
+  const percentage = `${Math.floor((trueValues / totalValues) * 100)}%`;
+
   meter.max = totalValues;
   meter.low = Math.floor(0.2 * totalValues);
   meter.high = Math.floor(0.8 * totalValues);
   meter.optimum = Math.floor(0.9 * totalValues);
   meter.value = trueValues;
-  label.textContent = `${Math.floor((trueValues / totalValues) * 100)}%`;
+
+  fakeMeter.querySelector('span').style.width = percentage;
+  if (meter.value < meter.low) {
+    fakeMeter.classList.add('red');
+  } else if (meter.value <= meter.low && meter.value <= meter.high) {
+    fakeMeter.classList.add('orange');
+  }
+
+  label.textContent = percentage;
   label.parentNode.hidden = false;
 
   code.textContent = navigator.userAgent;
 });
+
+if ('share' in navigator) {
+  import('./share.mjs');
+}

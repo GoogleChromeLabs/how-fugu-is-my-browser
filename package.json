@@ -5,7 +5,7 @@
   "scripts": {
     "start": "npx http-server",
     "fix": "npx prettier . --write",
-    "prepare": "shx cp -r ./node_modules/fugu-api-data/patterns.mjs ."
+    "prepare": "shx cp -r ./node_modules/fugu-api-data/patterns.mjs . && shx cp ./node_modules/html2canvas/dist/html2canvas.esm.js ."
   },
   "repository": {
     "type": "git",
@@ -22,8 +22,9 @@
   "homepage": "https://github.com/tomayac/how-fugu-is-my-browser#readme",
   "devDependencies": {
     "fugu-api-data": "^1.1.0",
+    "html2canvas": "^1.0.0-rc.7",
     "http-server": "^0.12.3",
-    "prettier": "^2.3.1",
+    "prettier": "^2.3.2",
     "shx": "^0.3.3"
   }
 }

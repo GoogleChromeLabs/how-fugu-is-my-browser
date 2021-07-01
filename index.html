@@ -11,31 +11,40 @@
     <base target="_blank" />
   </head>
   <body>
-    <h1>How Fugu is my browser?</h1>
+    <main>
+      <h1>How Fugu is my browser?</h1>
 
-    <img src="./fugu.svg" width="64" height="64" />
-    <meter id="meter"></meter>
+      <img src="./fugu.svg" width="64" height="64" />
 
-    <p hidden>
-      Your browser—<code></code>—is
-      <label for="meter"></label>
-      Fugu!
-    </p>
+      <meter id="meter"></meter>
 
-    <table hidden>
-      <thead>
-        <tr>
-          <th>API Name</th>
-          <th>Supported</th>
-        </tr>
-      </thead>
-      <tbody></tbody>
-    </table>
+      <div hidden class="meter">
+        <span></span>
+      </div>
 
-    <footer>
-      Made by
-      <a href="https://twitter.com/tomayac">@tomayac</a>. Source code on
-      <a href="https://github.com/tomayac/how-fugu-is-my-browser">GitHub</a>.
-    </footer>
+      <p hidden>
+        Your browser—<code></code>—is
+        <label for="meter"></label>
+        Fugu!
+      </p>
+
+      <button hidden type="button">Share</button>
+
+      <table hidden>
+        <thead>
+          <tr>
+            <th>API Name</th>
+            <th>Supported</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+
+      <footer>
+        Made by
+        <a href="https://twitter.com/tomayac">@tomayac</a>. Source code on
+        <a href="https://github.com/tomayac/how-fugu-is-my-browser">GitHub</a>.
+      </footer>
+    </main>
   </body>
 </html>
