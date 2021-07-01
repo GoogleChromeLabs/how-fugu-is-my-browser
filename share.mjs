@@ -11,7 +11,10 @@ let files;
   clone.querySelector('.meter').hidden = false;
   const logo = clone.querySelector('img');
   logo.addEventListener('load', async () => {
+    document.body.append(clone);
     const blob = await createScreenshot();
+    clone.remove();
+    logo.removeEventListener('load', createScreenshot);
     files = [new File([blob], 'howfuguismybrowser_dev.png')];
     button.hidden = false;
   });
@@ -43,12 +46,9 @@ const createScreenshot = async () => {
   const backgroundColor = getComputedStyle(
     document.documentElement,
   ).getPropertyValue('--main-background-color');
-  document.body.append(clone);
   const canvas = await html2canvas(clone, {
     backgroundColor,
   });
-  clone.remove();
-  logo.removeEventListener('load', createScreenshot);
   return new Promise((resolve) =>
     canvas.toBlob((blob) => {
       resolve(blob);
