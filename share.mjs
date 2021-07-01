@@ -6,17 +6,19 @@ const p = document.querySelector('p');
 
 let files;
 
-const clone = main.cloneNode(true);
-clone.querySelector('.meter').hidden = false;
-const logo = clone.querySelector('img');
-logo.addEventListener('load', async () => {
-  const blob = await createScreenshot();
-  files = [new File([blob], 'howfuguismybrowser_dev.png')];
-  button.hidden = false;
-});
-logo.src = 'fugu.png';
+(async () => {
+  const clone = main.cloneNode(true);
+  clone.querySelector('.meter').hidden = false;
+  const logo = clone.querySelector('img');
+  logo.addEventListener('load', async () => {
+    const blob = await createScreenshot();
+    files = [new File([blob], 'howfuguismybrowser_dev.png')];
+    button.hidden = false;
+  });
+  logo.src = 'fugu.png';
+})();
 
-button.addEventListener('click', () => {
+button.addEventListener('click', async () => {
   console.log(navigator.canShare({
     url: location.href,
     text: p.textContent,
