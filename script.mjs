@@ -88,8 +88,8 @@ window.addEventListener('load', async () => {
   label.parentNode.hidden = false;
 
   code.textContent = navigator.userAgent;
-});
 
-if ('share' in navigator) {
-  import('/share.mjs');
-}
+  if ('share' in navigator) {
+    import('/share.mjs');
+  }
+});
