@@ -5,7 +5,7 @@
   "scripts": {
     "start": "npm run dev",
     "dev": "vite",
-    "build": "vite build && shx echo \"howfuguismybrowser.dev\" > docs/CNAME && git add docs/",
+    "build": "vite build && shx echo \"howfuguismybrowser.dev\" > docs/CNAME && shx cp ./sw.js ./docs/ && git add docs/",
     "serve": "vite preview",
     "https-preview": "serve docs",
     "lint": "npm run lint:js && npm run lint:css && npm run lint:esm",

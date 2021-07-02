@@ -12,7 +12,7 @@ let trueValues = 0;
 
 window.addEventListener('load', async () => {
   // Some of the feature detection tests need a service worker.
-  await navigator.serviceWorker.register('sw.js');
+  await navigator.serviceWorker.register('./sw.js');
 
   // Await all the promises.
   let patternsResolved = await Promise.all(
