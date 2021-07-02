@@ -33,7 +33,7 @@ button.addEventListener('click', async () => {
       : '🟧'
   } ${label.textContent} Fugu 🐡!
 
-How Fugu 🐡 is yours? Find out and share #HowFuguIsMyBrowser at ${canonical}❗️`;
+How Fugu 🐡 is yours? Find out #HowFuguIsMyBrowser and share at ${canonical}❗️`.trim();
   /* eslint-enable no-irregular-whitespace */
 
   const shareData = {
@@ -76,7 +76,7 @@ const createScreenshot = async (clone) => {
   document.body.append(clone);
   const blob = await createScreenshot(clone);
   clone.remove();
-  files = [new File([blob], 'howfuguismybrowser_dev.png')];
+  files = [new File([blob], 'howfuguismybrowser_dev.png', { type: blob.type })];
   /Apple/.test(navigator.vendor)
     ? button.classList.add('ios')
     : button.classList.add('others');
