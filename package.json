@@ -3,9 +3,17 @@
   "version": "1.0.0",
   "description": "A test app to determine what Project Fugu 🐡 APIs your browser supports.",
   "scripts": {
-    "start": "npx http-server",
+    "start": "npm run dev",
+    "dev": "vite",
+    "build": "vite build && shx echo \"howfuguismybrowser.dev\" > docs/CNAME && git add docs/",
+    "serve": "vite preview",
+    "https-preview": "serve docs",
+    "lint": "npm run lint:js && npm run lint:css && npm run lint:esm",
+    "lint:esm": "npx find-unused-exports",
+    "lint:js": "npx eslint . --ext .js,.mjs --fix --ignore-pattern docs/",
+    "lint:css": "npx stylelint \"**/*.css\" --fix",
     "fix": "npx prettier . --write",
-    "prepare": "shx cp -r ./node_modules/fugu-api-data/patterns.mjs . && shx cp ./node_modules/html2canvas/dist/html2canvas.esm.js ."
+    "deploy": "npm run lint && npm run fix && npm run build && git commit -a && git push"
   },
   "repository": {
     "type": "git",
@@ -22,9 +30,32 @@
   "homepage": "https://github.com/tomayac/how-fugu-is-my-browser#readme",
   "devDependencies": {
     "fugu-api-data": "^1.1.0",
+    "@rollup/plugin-dynamic-import-vars": "^1.1.1",
+    "vite": "^2.3.8",
     "html2canvas": "^1.0.0-rc.7",
     "http-server": "^0.12.3",
     "prettier": "^2.3.2",
-    "shx": "^0.3.3"
+    "shx": "^0.3.3",
+    "eslint": "^7.29.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-config-prettier": "^8.3.0",
+    "find-unused-exports": "^2.0.0",
+    "https-localhost": "^4.6.5",
+    "stylelint": "^13.13.1",
+    "stylelint-config-standard": "^22.0.0",
+    "stylelint-order": "^4.1.0"
+  },
+  "eslintConfig": {
+    "parserOptions": {
+      "ecmaVersion": 2020,
+      "sourceType": "module"
+    },
+    "extends": [
+      "google",
+      "prettier"
+    ],
+    "rules": {
+      "valid-jsdoc": "off"
+    }
   }
 }

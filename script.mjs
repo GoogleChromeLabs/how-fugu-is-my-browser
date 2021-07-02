@@ -1,4 +1,4 @@
-import patterns from './patterns.mjs';
+import patterns from 'fugu-api-data/patterns';
 
 // DOM references.
 const tbody = document.querySelector('tbody');
@@ -91,5 +91,5 @@ window.addEventListener('load', async () => {
 });
 
 if ('share' in navigator) {
-  import('./share.mjs');
+  import('/share.mjs');
 }

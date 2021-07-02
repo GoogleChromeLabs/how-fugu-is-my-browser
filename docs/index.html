@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>How Fugu is my browser?</title>
+    
+    <link rel="icon" href="/assets/fugu.3b15f1ef.svg" />
+    <link rel="modulepreload" href="node_modules/fugu-api-data/patterns" />
+    <link rel="modulepreload" href="data:application/javascript;base64,aW1wb3J0IGh0bWwyY2FudmFzIGZyb20gJ2h0bWwyY2FudmFzJzsKCmNvbnN0IG1haW4gPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKCdtYWluJyk7CmNvbnN0IGJ1dHRvbiA9IGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoJ2J1dHRvbicpOwpjb25zdCBwID0gZG9jdW1lbnQucXVlcnlTZWxlY3RvcigncCcpOwoKbGV0IGZpbGVzOwoKKGFzeW5jICgpID0+IHsKICBjb25zdCBjbG9uZSA9IG1haW4uY2xvbmVOb2RlKHRydWUpOwogIGNsb25lLnF1ZXJ5U2VsZWN0b3IoJy5tZXRlcicpLmhpZGRlbiA9IGZhbHNlOwogIGNvbnN0IGxvZ28gPSBjbG9uZS5xdWVyeVNlbGVjdG9yKCdpbWcnKTsKICBsb2dvLmFkZEV2ZW50TGlzdGVuZXIoJ2xvYWQnLCBhc3luYyAoKSA9PiB7CiAgICBkb2N1bWVudC5ib2R5LmFwcGVuZChjbG9uZSk7CiAgICBjb25zdCBibG9iID0gYXdhaXQgY3JlYXRlU2NyZWVuc2hvdChjbG9uZSk7CiAgICBjbG9uZS5yZW1vdmUoKTsKICAgIGxvZ28ucmVtb3ZlRXZlbnRMaXN0ZW5lcignbG9hZCcsIGNyZWF0ZVNjcmVlbnNob3QpOwogICAgZmlsZXMgPSBbbmV3IEZpbGUoW2Jsb2JdLCAnaG93ZnVndWlzbXlicm93c2VyX2Rldi5wbmcnKV07CiAgICBidXR0b24uaGlkZGVuID0gZmFsc2U7CiAgfSk7CiAgbG9nby5zcmMgPSAnZnVndS5wbmcnOwp9KSgpOwoKYnV0dG9uLmFkZEV2ZW50TGlzdGVuZXIoJ2NsaWNrJywgYXN5bmMgKCkgPT4gewogIGNvbnNvbGUubG9nKG5hdmlnYXRvci5jYW5TaGFyZSh7CiAgICB1cmw6IGxvY2F0aW9uLmhyZWYsCiAgICB0ZXh0OiBwLnRleHRDb250ZW50LAogICAgZmlsZXMsCiAgfSksIHsKICAgIHVybDogbG9jYXRpb24uaHJlZiwKICAgIHRleHQ6IHAudGV4dENvbnRlbnQsCiAgICBmaWxlcywKICB9KTsKICB0cnkgewogICAgYXdhaXQgbmF2aWdhdG9yLnNoYXJlKHsKICAgICAgdXJsOiBsb2NhdGlvbi5ocmVmLAogICAgICB0ZXh0OiBwLnRleHRDb250ZW50LAogICAgICBmaWxlcywKICAgIH0pOwogIH0gY2F0Y2ggKGVycikgewogICAgY29uc29sZS5lcnJvcihlcnIubmFtZSwgZXJyLm1lc3NhZ2UpOwogIH0KfSk7Cgpjb25zdCBjcmVhdGVTY3JlZW5zaG90ID0gYXN5bmMgKGNsb25lKSA9PiB7CiAgY29uc3QgYmFja2dyb3VuZENvbG9yID0gZ2V0Q29tcHV0ZWRTdHlsZSgKICAgIGRvY3VtZW50LmRvY3VtZW50RWxlbWVudCwKICApLmdldFByb3BlcnR5VmFsdWUoJy0tbWFpbi1iYWNrZ3JvdW5kLWNvbG9yJyk7CiAgY29uc3QgY2FudmFzID0gYXdhaXQgaHRtbDJjYW52YXMoY2xvbmUsIHsKICAgIGJhY2tncm91bmRDb2xvciwKICB9KTsKICByZXR1cm4gbmV3IFByb21pc2UoKHJlc29sdmUpID0+CiAgICBjYW52YXMudG9CbG9iKChibG9iKSA9PiB7CiAgICAgIHJlc29sdmUoYmxvYik7CiAgICB9KSwKICApOwp9Owo=" />
+    
+    <base target="_blank" />
+  <script type="module" crossorigin src="/assets/index.6f45a4f4.js"></script>
+  <link rel="modulepreload" href="/assets/vendor.fe20f9e1.js">
+  <link rel="stylesheet" href="/assets/index.a77bd28c.css">
+</head>
+  <body>
+    <main>
+      <h1>How Fugu is my browser?</h1>
+
+      <img src="/assets/fugu.3b15f1ef.svg" width="64" height="64" />
+
+      <meter id="meter"></meter>
+
+      <div hidden class="meter">
+        <span></span>
+      </div>
+
+      <p hidden>
+        Your browser—<code></code>—is
+        <label for="meter"></label>
+        Fugu!
+      </p>
+
+      <button hidden type="button">Share</button>
+
+      <table hidden>
+        <thead>
+          <tr>
+            <th>API Name</th>
+            <th>Supported</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+
+      <footer>
+        Made by
+        <a href="https://twitter.com/tomayac">@tomayac</a>. Source code on
+        <a href="https://github.com/tomayac/how-fugu-is-my-browser">GitHub</a>.
+      </footer>
+    </main>
+  </body>
+</html>

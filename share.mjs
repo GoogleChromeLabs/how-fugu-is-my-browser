@@ -1,4 +1,4 @@
-import html2canvas from './html2canvas.esm.js';
+import html2canvas from 'html2canvas';
 
 const main = document.querySelector('main');
 const button = document.querySelector('button');
@@ -22,15 +22,18 @@ let files;
 })();
 
 button.addEventListener('click', async () => {
-  console.log(navigator.canShare({
-    url: location.href,
-    text: p.textContent,
-    files,
-  }), {
-    url: location.href,
-    text: p.textContent,
-    files,
-  });
+  console.log(
+    navigator.canShare({
+      url: location.href,
+      text: p.textContent,
+      files,
+    }),
+    {
+      url: location.href,
+      text: p.textContent,
+      files,
+    },
+  );
   try {
     await navigator.share({
       url: location.href,

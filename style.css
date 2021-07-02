@@ -1,10 +1,11 @@
 :root {
-  color-scheme: dark light;
   --main-background-color: #fff;
   --main-color: #111;
   --table-alternate-color: #eee;
   --table-hover-color: #ddd;
   --link-color: rgb(0, 0, 238);
+
+  color-scheme: dark light;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -85,11 +86,12 @@ footer {
 }
 
 .meter {
-  height: 8px;
   width: 80px;
+  height: 8px;
   background: #555;
   border-radius: 4px;
 }
+
 .meter > span {
   display: block;
   height: 100%;
