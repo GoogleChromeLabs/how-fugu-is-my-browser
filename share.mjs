@@ -6,20 +6,10 @@ const p = document.querySelector('p');
 
 let files;
 
-(async () => {
-  const clone = main.cloneNode(true);
-  clone.querySelector('.meter').hidden = false;
-  document.body.append(clone);
-  const blob = await createScreenshot(clone);
-  clone.remove();
-  files = [new File([blob], 'howfuguismybrowser_dev.png')];
-  button.style.visibility = 'visible';
-})();
-
 button.addEventListener('click', async () => {
   const shareData = {
     url: document.querySelector('link[rel="canonical"]').href,
-    text: p.textContent.trim(),
+    text: p.textContent.replace(/\n/g, '').replace(/\s+/g, ' ').trim(),
     files,
   };
   if (navigator.canShare(shareData)) {
@@ -44,3 +34,13 @@ const createScreenshot = async (clone) => {
     }),
   );
 };
+
+(async () => {
+  const clone = main.cloneNode(true);
+  clone.querySelector('.meter').hidden = false;
+  document.body.append(clone);
+  const blob = await createScreenshot(clone);
+  clone.remove();
+  files = [new File([blob], 'howfuguismybrowser_dev.png')];
+  button.style.visibility = 'visible';
+})();
