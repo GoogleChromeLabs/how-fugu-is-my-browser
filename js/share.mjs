@@ -59,10 +59,9 @@ const createScreenshot = async (clone) => {
   const linkColor = computedStyle.getPropertyValue('--link-color');
   clone.querySelectorAll('a').forEach((a) => (a.style.color = linkColor));
   const contrastColor = computedStyle.getPropertyValue('--contrast-color');
-
   clone
     .querySelectorAll('code')
-    .forEach((a) => (code.style.color = contrastColor));
+    .forEach((code) => (code.style.color = contrastColor));
   const backgroundColor = computedStyle.getPropertyValue(
     '--main-background-color',
   );

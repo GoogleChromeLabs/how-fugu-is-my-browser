@@ -13,7 +13,7 @@
     "lint:js": "npx eslint . --ext .js,.mjs --fix --ignore-pattern docs/",
     "lint:css": "npx stylelint \"**/*.css\" --fix",
     "fix": "npx prettier . --write",
-    "deploy": "npm run lint && npm run fix && npm run build && git commit -a && git push && fg"
+    "deploy": "npm run lint && npm run fix && npm run build && git commit -a && git push"
   },
   "repository": {
     "type": "git",
