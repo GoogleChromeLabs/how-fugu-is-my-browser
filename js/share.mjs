@@ -33,7 +33,7 @@ button.addEventListener('click', async () => {
       : '🟧'
   } ${label.textContent} Fugu 🐡!
 
-How Fugu 🐡 is yours? Find out #HowFuguIsMyBrowser and share at ${canonical}❗️`.trim();
+How Fugu 🐡 is yours? Find out at ${canonical} and share with #HowFuguIsMyBrowser!`.trim();
   /* eslint-enable no-irregular-whitespace */
 
   const shareData = {
