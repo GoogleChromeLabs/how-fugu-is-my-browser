@@ -46,6 +46,10 @@ a {
   color: var(--link-color);
 }
 
+button {
+  visibility: hidden;
+}
+
 img {
   display: block;
 }
