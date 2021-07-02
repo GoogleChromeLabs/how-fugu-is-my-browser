@@ -4,6 +4,7 @@
   --table-alternate-color: #eee;
   --table-hover-color: #ddd;
   --link-color: rgb(0, 0, 238);
+  --contrast-color: deeppink;
 
   color-scheme: dark light;
 }
@@ -38,7 +39,7 @@ body {
 }
 
 h1 {
-  color: deeppink;
+  color: var(--contrast-color);
   font-size: 1.25rem;
 }
 
@@ -97,7 +98,7 @@ img {
 
 code,
 label {
-  color: deeppink;
+  color: var(--contrast-color);
 }
 
 code {

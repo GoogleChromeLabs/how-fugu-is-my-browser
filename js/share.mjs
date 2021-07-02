@@ -56,6 +56,13 @@ How Fugu 🐡 is yours? Find out at ${canonical} and share with #HowFuguIsMyBro
 
 const createScreenshot = async (clone) => {
   const computedStyle = getComputedStyle(document.documentElement);
+  const linkColor = computedStyle.getPropertyValue('--link-color');
+  clone.querySelectorAll('a').forEach((a) => (a.style.color = linkColor));
+  const contrastColor = computedStyle.getPropertyValue('--contrast-color');
+
+  clone
+    .querySelectorAll('code')
+    .forEach((a) => (code.style.color = contrastColor));
   const backgroundColor = computedStyle.getPropertyValue(
     '--main-background-color',
   );
