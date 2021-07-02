@@ -7,22 +7,19 @@ const fakeMeter = document.querySelector('.meter');
 
 let files;
 
-/Apple/.test(navigator.vendor)
-  ? button.classList.add('ios')
-  : button.classList.add('others');
-
-const canonical = document.querySelector('link[rel="canonical"]').href;
-
 const shareTextOnly = async (shareData) => {
   delete shareData.files;
   try {
     await navigator.share(shareData);
-  } catch {
-    console.error(err.name, err.message);
+  } catch (err) {
+    if (err.name !== 'AbortError') {
+      console.error(err.name, err.message);
+    }
   }
 };
 
 button.addEventListener('click', async () => {
+  const canonical = document.querySelector('link[rel="canonical"]').href;
   /* eslint-disable no-irregular-whitespace */
   const message = `🙋 My browser…
 
@@ -47,8 +44,10 @@ How Fugu 🐡 is yours? Find out and share #HowFuguIsMyBrowser at ${canonical}�
     try {
       await navigator.share(shareData);
     } catch (err) {
-      console.error(err.name, err.message);
-      shareTextOnly(shareData);
+      if (err.name !== 'AbortError') {
+        console.error(err.name, err.message);
+        shareTextOnly(shareData);
+      }
     }
   } else {
     shareTextOnly(shareData);
@@ -78,5 +77,8 @@ const createScreenshot = async (clone) => {
   const blob = await createScreenshot(clone);
   clone.remove();
   files = [new File([blob], 'howfuguismybrowser_dev.png')];
+  /Apple/.test(navigator.vendor)
+    ? button.classList.add('ios')
+    : button.classList.add('others');
   button.style.visibility = 'visible';
 })();
