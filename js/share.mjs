@@ -38,21 +38,19 @@ How Fugu 🐡 is yours? Find out and share #HowFuguIsMyBrowser at ${canonical}�
 
   const shareData = {
     text: message,
-    url: '',
     title: '',
     files,
   };
-  if (navigator.canShare(shareData)) {
-    try {
-      await navigator.share(shareData);
-    } catch (err) {
-      if (err.name !== 'AbortError') {
-        console.error(err.name, err.message);
-        shareTextOnly(shareData);
-      }
+  if (!navigator.canShare(shareData)) {
+    return shareTextOnly(shareData);
+  }
+  try {
+    await navigator.share(shareData);
+  } catch (err) {
+    if (err.name !== 'AbortError') {
+      console.error(err.name, err.message);
+      shareTextOnly(shareData);
     }
-  } else {
-    shareTextOnly(shareData);
   }
 });
 
