@@ -71,8 +71,8 @@ const createScreenshot = async (clone) => {
 
 (async () => {
   const clone = main.cloneNode(true);
+  // Make the fake meter visible.
   clone.querySelector('.meter').hidden = false;
-  clone.querySelector('button').hidden = true;
   document.body.append(clone);
   const blob = await createScreenshot(clone);
   clone.remove();
