@@ -83,6 +83,8 @@ window.addEventListener('load', async () => {
     fakeMeter.classList.add('red');
   } else if (meter.value <= meter.low && meter.value <= meter.high) {
     fakeMeter.classList.add('orange');
+  } else {
+    fakeMeter.classList.add('green');
   }
 
   label.textContent = percentage;

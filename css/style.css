@@ -163,6 +163,9 @@ meter {
   border-bottom-right-radius: 2px;
   border-top-left-radius: 4px;
   border-bottom-left-radius: 4px;
+}
+
+.meter.green > span {
   background-color: green;
 }
 

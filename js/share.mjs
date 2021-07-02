@@ -2,7 +2,8 @@ import html2canvas from 'html2canvas';
 
 const main = document.querySelector('main');
 const button = document.querySelector('button');
-const message = document.querySelector('.message');
+const label = document.querySelector('label');
+const fakeMeter = document.querySelector('.meter');
 
 let files;
 
@@ -10,10 +11,36 @@ let files;
   ? button.classList.add('ios')
   : button.classList.add('others');
 
+const canonical = document.querySelector('link[rel="canonical"]').href;
+
+const shareTextOnly = async (shareData) => {
+  delete shareData.files;
+  try {
+    await navigator.share(shareData);
+  } catch {
+    console.error(err.name, err.message);
+  }
+};
+
 button.addEventListener('click', async () => {
+  /* eslint-disable no-irregular-whitespace */
+  const message = `🙋 My browser…
+
+👉 \`${navigator.userAgent.substr(0, 120)}\` 👈
+
+…is ${
+    fakeMeter.classList.contains('green')
+      ? '🟩'
+      : fakeMeter.classList.contains('red')
+      ? '🟥'
+      : '🟧'
+  } ${label.textContent} Fugu 🐡!
+
+How Fugu 🐡 is yours? Find out and share #HowFuguIsMyBrowser at ${canonical}❗️`;
+  /* eslint-enable no-irregular-whitespace */
+
   const shareData = {
-    url: document.querySelector('link[rel="canonical"]').href,
-    text: message.textContent.replace(/\n/g, '').replace(/\s+/g, ' ').trim(),
+    text: message,
     files,
   };
   if (navigator.canShare(shareData)) {
@@ -21,7 +48,10 @@ button.addEventListener('click', async () => {
       await navigator.share(shareData);
     } catch (err) {
       console.error(err.name, err.message);
+      shareTextOnly(shareData);
     }
+  } else {
+    shareTextOnly(shareData);
   }
 });
 
