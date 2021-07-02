@@ -61,6 +61,7 @@ window.addEventListener('load', async () => {
     a.textContent = api;
     a.href = value.documentation;
     td1.append(a);
+    td2.classList.add('icon');
     td2.textContent = value.supported
       ? '✅'
       : value.supported === undefined
@@ -90,6 +91,6 @@ window.addEventListener('load', async () => {
   code.textContent = navigator.userAgent;
 
   if ('share' in navigator) {
-    import('/share.mjs');
+    import('/js/share.mjs');
   }
 });

@@ -2,14 +2,18 @@ import html2canvas from 'html2canvas';
 
 const main = document.querySelector('main');
 const button = document.querySelector('button');
-const p = document.querySelector('p');
+const message = document.querySelector('.message');
 
 let files;
+
+/Apple/.test(navigator.vendor)
+  ? button.classList.add('ios')
+  : button.classList.add('others');
 
 button.addEventListener('click', async () => {
   const shareData = {
     url: document.querySelector('link[rel="canonical"]').href,
-    text: p.textContent.replace(/\n/g, '').replace(/\s+/g, ' ').trim(),
+    text: message.textContent.replace(/\n/g, '').replace(/\s+/g, ' ').trim(),
     files,
   };
   if (navigator.canShare(shareData)) {
@@ -22,9 +26,10 @@ button.addEventListener('click', async () => {
 });
 
 const createScreenshot = async (clone) => {
-  const backgroundColor = getComputedStyle(
-    document.documentElement,
-  ).getPropertyValue('--main-background-color');
+  const computedStyle = getComputedStyle(document.documentElement);
+  const backgroundColor = computedStyle.getPropertyValue(
+    '--main-background-color',
+  );
   const canvas = await html2canvas(clone, {
     backgroundColor,
   });
@@ -38,6 +43,7 @@ const createScreenshot = async (clone) => {
 (async () => {
   const clone = main.cloneNode(true);
   clone.querySelector('.meter').hidden = false;
+  clone.querySelector('button').hidden = true;
   document.body.append(clone);
   const blob = await createScreenshot(clone);
   clone.remove();

@@ -4,31 +4,45 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>How Fugu is my browser?</title>
-    <link rel="stylesheet" href="/style.css" />
-    <link rel="icon" href="/fugu.svg" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="icon" href="/assets/fugu.svg" />
     <link rel="canonical" href="https://howfuguismybrowser.dev/" />
-    <script src="/script.mjs" type="module"></script>
+    <script src="/js/script.mjs" type="module"></script>
     <base target="_blank" />
   </head>
   <body>
     <main>
       <h1>How Fugu is my browser?</h1>
 
-      <img src="/fugu.png" width="64" height="64" />
+      <p>
+        Our <a href="https://web.dev/fugu-status/">Project Fugu</a> is a
+        cross-company effort with the objective of making it possible for Web
+        apps to do anything iOS, Android, or desktop apps can.
+      </p>
+      <p>
+        We do this by exposing the capabilities of these platforms to the Web,
+        all while maintaining user security, privacy, trust, and other core
+        tenets of the Web.
+      </p>
+      <p>Find out where on the journey your current browser is!</p>
 
-      <meter id="meter"></meter>
+      <div class="wrapper">
+        <div>
+          <img src="/assets/fugu.png" width="64" height="64" />
+          <meter id="meter"></meter>
 
-      <div hidden class="meter">
-        <span></span>
+          <div hidden class="meter">
+            <span></span>
+          </div>
+        </div>
+        <button type="button">Share</button>
       </div>
 
-      <p hidden>
+      <p class="message" hidden>
         Your browser—<code></code>—is
         <label for="meter"></label>
         Fugu!
       </p>
-
-      <button type="button">Share</button>
 
       <table hidden>
         <thead>

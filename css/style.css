@@ -38,7 +38,7 @@ body {
 }
 
 h1 {
-  color: dodgerblue;
+  color: deeppink;
   font-size: 1.25rem;
 }
 
@@ -46,12 +46,59 @@ a {
   color: var(--link-color);
 }
 
+.wrapper {
+  display: flex;
+  gap: 1rem;
+}
+
 button {
   visibility: hidden;
+  display: inline-block;
+  border: none;
+  padding-inline: 1rem;
+  margin: 0;
+  text-decoration: none;
+  background-color: dodgerblue;
+  background-position-y: 50%;
+  background-position-x: 15%;
+  border-radius: 4px;
+  color: #fff;
+  font-family: inherit;
+  font-size: inherit;
+  cursor: pointer;
+  text-align: center;
+  transition: background 250ms ease-in-out, transform 150ms ease;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-repeat: no-repeat;
+  width: 8rem;
+}
+
+button:hover,
+button:focus {
+  background-color: var(--link-color);
+}
+
+button:focus {
+  outline: 1px solid #fff;
+  outline-offset: -4px;
+}
+
+button:active {
+  transform: scale(0.99);
+}
+
+.ios {
+  background-image: url(/assets/share-ios.svg);
+}
+
+.others {
+  background-image: url(/assets/share-others.svg);
 }
 
 img {
-  display: block;
+  vertical-align: middle;
 }
 
 code,
@@ -66,7 +113,8 @@ code {
 
 table {
   width: 100%;
-  outline: solid 1px;
+  outline: solid 1px var(--table-alternate-color);
+  outline-offset: -2px;
 }
 
 thead {
@@ -75,6 +123,10 @@ thead {
 
 th {
   padding-block: 0.5rem;
+}
+
+td {
+  padding-block: 0.25rem;
 }
 
 tbody > tr:nth-of-type(2n) {
@@ -87,6 +139,14 @@ tbody > tr:hover {
 
 footer {
   margin-block-start: 1rem;
+}
+
+.icon {
+  filter: grayscale(1);
+}
+
+meter {
+  display: block;
 }
 
 .meter {
