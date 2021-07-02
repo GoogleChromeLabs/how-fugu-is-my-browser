@@ -38,6 +38,8 @@ How Fugu 🐡 is yours? Find out and share #HowFuguIsMyBrowser at ${canonical}�
 
   const shareData = {
     text: message,
+    url: '',
+    title: '',
     files,
   };
   if (navigator.canShare(shareData)) {
