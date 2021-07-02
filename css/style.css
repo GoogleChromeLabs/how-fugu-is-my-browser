@@ -75,14 +75,8 @@ button {
   width: 8rem;
 }
 
-button:hover,
-button:focus {
+button:hover {
   background-color: var(--link-color);
-}
-
-button:focus {
-  outline: 1px solid #fff;
-  outline-offset: -4px;
 }
 
 button:active {
