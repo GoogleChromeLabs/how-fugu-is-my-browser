@@ -13,6 +13,20 @@
     <link rel="stylesheet" href="/css/style.css" />
     <link rel="icon" href="/assets/fugu.svg" />
     <link rel="canonical" href="https://howfuguismybrowser.dev/" />
+    <script>
+      window.onerror = function (msg, url, lineNo, columnNo, error) {
+        var message = [
+          'Message: ' + msg,
+          'URL: ' + url,
+          'Line: ' + lineNo,
+          'Column: ' + columnNo,
+          'Error object: ' + JSON.stringify(error),
+        ].join(' - ');
+
+        alert(message);
+        return false;
+      };
+    </script>
     <script src="/js/script.mjs" type="module"></script>
     <base target="_blank" />
   </head>
