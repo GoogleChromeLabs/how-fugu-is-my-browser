@@ -39,6 +39,7 @@
     "http-server": "^0.12.3",
     "https-localhost": "^4.6.5",
     "prettier": "^2.3.2",
+    "pwacompat": "^2.0.17",
     "shx": "^0.3.3",
     "stylelint": "^13.13.1",
     "stylelint-config-standard": "^22.0.0",

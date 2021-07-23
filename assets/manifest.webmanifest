@@ -1,0 +1,31 @@
+{
+  "name": "How Fugu Is My Browser?",
+  "short_name": "How Fugu?",
+  "description": "The cross-company effort Project Fugu has the objective of making it possible for Web apps to do anything iOS, Android, or desktop apps can. Find out where on this exciting journey your current browser is!",
+  "start_url": "./",
+  "display": "standalone",
+  "theme_color": "deeppink",
+  "background_color": "#111",
+  "orientation": "portrait",
+  "language": "en",
+  "icons": [
+    {
+      "src": "./fugu.svg",
+      "type": "image/svg+xml",
+      "sizes": "150x150",
+      "purpose": "any"
+    },
+    {
+      "src": "./fugu.png",
+      "type": "image/png",
+      "sizes": "320x320",
+      "purpose": "any"
+    },
+    {
+      "src": "./fugu_maskable.png",
+      "type": "image/png",
+      "sizes": "1024x1024",
+      "purpose": "maskable"
+    }
+  ]
+}

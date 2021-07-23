@@ -97,4 +97,8 @@ window.addEventListener('load', async () => {
   if ('share' in navigator) {
     import('/js/share.mjs');
   }
+
+  if (/Apple/.test(navigator.vendor)) {
+    import('pwacompat');
+  }
 });
