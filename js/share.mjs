@@ -1,11 +1,15 @@
 import html2canvas from 'html2canvas';
 
-const main = document.querySelector('main');
 const button = document.querySelector('button');
 const label = document.querySelector('label');
 const fakeMeter = document.querySelector('.meter');
 
+// This needs to be prepared before the share button is clicked,
+// else, the user gesture would be consumed by the time the PNG
+// image can be created.
 let files;
+
+const canonical = document.querySelector('link[rel="canonical"]').href;
 
 const shareTextOnly = async (shareData) => {
   delete shareData.files;
@@ -19,7 +23,6 @@ const shareTextOnly = async (shareData) => {
 };
 
 button.addEventListener('click', async () => {
-  const canonical = document.querySelector('link[rel="canonical"]').href;
   /* eslint-disable no-irregular-whitespace */
   const message = `🙋 My browser…
 
@@ -33,7 +36,7 @@ button.addEventListener('click', async () => {
       : '🟧'
   } ${label.textContent} Fugu 🐡!
 
-How Fugu 🐡 is yours? Find out at ${canonical} and share with #HowFuguIsMyBrowser!`.trim();
+How Fugu 🐡 is yours? Find out at ${canonical} and share on #HowFuguIsMyBrowser!`.trim();
   /* eslint-enable no-irregular-whitespace */
 
   const shareData = {
@@ -76,9 +79,28 @@ const createScreenshot = async (clone) => {
 };
 
 (async () => {
-  const clone = main.cloneNode(true);
+  const clone = document.querySelector('main').cloneNode(true);
+  clone.style.fontFamily = 'sans-serif';
+  // Add some padding to the clone.
+  clone.style.padding = '3rem';
+  // Hide all paragraphs, except the one with the user-agent.
+  clone
+    .querySelectorAll('p:not(.message)')
+    .forEach((p) => (p.style.display = 'none'));
   // Make the fake meter visible.
   clone.querySelector('.meter').hidden = false;
+  // Show only the supported rows.
+  clone.querySelectorAll('tr > td:nth-child(2)').forEach((td) => {
+    if (!/✅/.test(td.textContent)) {
+      td.parentNode.remove();
+    }
+  });
+  // Add the URL to the footer.
+  const footer = clone.querySelector('footer');
+  footer.innerHTML = footer.innerHTML
+    .replace('Source code on', 'Test your browser at')
+    .replace('https://github.com/tomayac/how-fugu-is-my-browser', canonical)
+    .replace('GitHub', canonical.replace('https://', '').replace('/', ''));
   document.body.append(clone);
   const blob = await createScreenshot(clone);
   clone.remove();

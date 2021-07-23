@@ -65,10 +65,10 @@ window.addEventListener('load', async () => {
     td1.append(a);
     td2.classList.add('icon');
     td2.textContent = value.supported
-      ? '✅'
+      ? '✅ Yes'
       : value.supported === undefined
-      ? '🤷'
-      : '🚫';
+      ? '🤷 Unknown'
+      : '🚫 No';
   }
   tbody.parentNode.hidden = false;
 
