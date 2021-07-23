@@ -82,7 +82,7 @@ const createScreenshot = async (clone) => {
   const clone = document.querySelector('main').cloneNode(true);
   clone.style.fontFamily = 'sans-serif';
   // Add some padding to the clone.
-  clone.style.padding = '3rem';
+  clone.style.padding = '2rem';
   // Hide all paragraphs, except the one with the user-agent.
   clone
     .querySelectorAll('p:not(.message)')
