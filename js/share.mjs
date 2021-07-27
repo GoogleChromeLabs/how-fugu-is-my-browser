@@ -99,6 +99,7 @@ const createScreenshot = async (clone) => {
   // Use standard `monospace` font instead of `ui-monospace`.
   clone.querySelectorAll('code').forEach((code) => {
     code.style.fontFamily = 'monospace';
+    code.style.fontSize = '16px';
   });
   // Add the URL to the footer.
   const footer = clone.querySelector('footer');
@@ -108,10 +109,7 @@ const createScreenshot = async (clone) => {
     .replace('GitHub', canonical.replace('https://', '').replace('/', ''));
   document.body.append(clone);
   const blob = await createScreenshot(clone);
-  // clone.remove();
-  const img = document.createElement('img');
-  img.src = URL.createObjectURL(blob);
-  document.body.append(img);
+  clone.remove();
   files = [new File([blob], 'howfuguismybrowser_dev.png', { type: blob.type })];
   /Apple/.test(navigator.vendor)
     ? button.classList.add('ios')

@@ -94,7 +94,7 @@ window.addEventListener('load', async () => {
 
   code.textContent = navigator.userAgent;
 
-  if (true || 'share' in navigator) {
+  if ('share' in navigator) {
     import('/js/share.mjs');
   }
 
