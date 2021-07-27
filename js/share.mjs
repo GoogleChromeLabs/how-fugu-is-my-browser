@@ -106,7 +106,16 @@ const createScreenshot = async (clone) => {
   footer.innerHTML = footer.innerHTML
     .replace('Source code on', 'Test your browser at')
     .replace('https://github.com/tomayac/how-fugu-is-my-browser', canonical)
-    .replace('GitHub', canonical.replace('https://', '').replace('/', ''));
+    .replace(
+      'GitHub',
+      canonical
+        .replace('https://', '')
+        .replace('/', '')
+        .replace('how', 'How')
+        .replace('fugu', 'Fugu')
+        .replace('is', 'Is', 'my', 'My')
+        .replace('browser', 'Browser'),
+    );
   document.body.append(clone);
   const blob = await createScreenshot(clone);
   clone.remove();
