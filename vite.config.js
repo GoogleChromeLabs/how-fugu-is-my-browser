@@ -12,6 +12,7 @@ export default {
   build: {
     outDir: 'docs',
     target: 'esnext',
+    assetsInlineLimit: 0,
     rollupOptions: {
       input: {
         main: resolve(__dirname, 'index.html'),
