@@ -10,19 +10,19 @@
   "language": "en",
   "icons": [
     {
-      "src": "/assets/fugu.svg",
+      "src": "./assets/fugu.svg",
       "type": "image/svg+xml",
       "sizes": "150x150",
       "purpose": "any"
     },
     {
-      "src": "/assets/fugu.png",
+      "src": "./assets/fugu.png",
       "type": "image/png",
       "sizes": "320x320",
       "purpose": "any"
     },
     {
-      "src": "/assets/fugu_maskable.png",
+      "src": "./assets/fugu_maskable.png",
       "type": "image/png",
       "sizes": "1024x1024",
       "purpose": "maskable"
