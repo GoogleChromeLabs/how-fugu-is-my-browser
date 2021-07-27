@@ -80,6 +80,7 @@ const createScreenshot = async (clone) => {
 
 (async () => {
   const clone = document.querySelector('main').cloneNode(true);
+  // Use standard `sans-serif` font instead of `system-ui`.
   clone.style.fontFamily = 'sans-serif';
   // Add some padding to the clone.
   clone.style.padding = '2rem';
@@ -95,6 +96,10 @@ const createScreenshot = async (clone) => {
       td.parentNode.remove();
     }
   });
+  // Use standard `monospace` font instead of `ui-monospace`.
+  clone.querySelectorAll('code').forEach((code) => {
+    code.style.fontFamily = 'monospace';
+  });
   // Add the URL to the footer.
   const footer = clone.querySelector('footer');
   footer.innerHTML = footer.innerHTML
@@ -103,7 +108,10 @@ const createScreenshot = async (clone) => {
     .replace('GitHub', canonical.replace('https://', '').replace('/', ''));
   document.body.append(clone);
   const blob = await createScreenshot(clone);
-  clone.remove();
+  // clone.remove();
+  const img = document.createElement('img');
+  img.src = URL.createObjectURL(blob);
+  document.body.append(img);
   files = [new File([blob], 'howfuguismybrowser_dev.png', { type: blob.type })];
   /Apple/.test(navigator.vendor)
     ? button.classList.add('ios')

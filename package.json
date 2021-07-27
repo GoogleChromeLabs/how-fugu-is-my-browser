@@ -4,7 +4,7 @@
   "description": "A test app to determine what Project Fugu 🐡 APIs your browser supports.",
   "scripts": {
     "start": "npm run dev",
-    "dev": "vite",
+    "dev": "vite --host",
     "build": "vite build && shx echo \"howfuguismybrowser.dev\" > docs/CNAME && shx cp ./sw.js ./docs/ && git add docs/",
     "serve": "vite preview",
     "https-preview": "serve docs",
@@ -29,7 +29,7 @@
   },
   "homepage": "https://github.com/tomayac/how-fugu-is-my-browser#readme",
   "devDependencies": {
-    "@rollup/plugin-dynamic-import-vars": "^1.3.0",
+    "@rollup/plugin-dynamic-import-vars": "^1.4.0",
     "eslint": "^7.31.0",
     "eslint-config-google": "^0.14.0",
     "eslint-config-prettier": "^8.3.0",
@@ -44,7 +44,7 @@
     "stylelint": "^13.13.1",
     "stylelint-config-standard": "^22.0.0",
     "stylelint-order": "^4.1.0",
-    "vite": "^2.4.3"
+    "vite": "^2.4.4"
   },
   "eslintConfig": {
     "parserOptions": {
