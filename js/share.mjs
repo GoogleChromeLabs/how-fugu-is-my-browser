@@ -113,7 +113,8 @@ const createScreenshot = async (clone) => {
         .replace('/', '')
         .replace('how', 'How')
         .replace('fugu', 'Fugu')
-        .replace('is', 'Is', 'my', 'My')
+        .replace('is', 'Is')
+        .replace('my', 'My')
         .replace('browser', 'Browser'),
     );
   document.body.append(clone);
