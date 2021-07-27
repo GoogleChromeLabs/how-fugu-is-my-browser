@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#fff" />
+    <meta
+      name="theme-color"
+      content="#111"
+      media="(prefers-color-scheme: dark)"
+    />
+    <title>How Fugu is my browser?</title>
+    <base target="_blank" />
+    <style>
+      :root {
+        --main-background-color: #fff;
+        --main-color: #111;
+        --table-alternate-color: #eee;
+        --table-hover-color: #ddd;
+        --link-color: rgb(0, 0, 238);
+        --contrast-color: deeppink;
+
+        color-scheme: dark light;
+      }
+
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --main-background-color: #111;
+          --main-color: #eee;
+          --table-alternate-color: #222;
+          --table-hover-color: #333;
+          --link-color: rgb(158, 158, 255);
+        }
+      }
+
+      html,
+      body {
+        color: var(--main-color);
+        background-color: var(--main-background-color);
+      }
+
+      html {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      body {
+        width: 60ch;
+        max-width: 60ch;
+        font-family: system-ui, sans-serif;
+        margin-block: 1rem;
+      }
+
+      h1 {
+        color: var(--contrast-color);
+        font-size: 1.25rem;
+      }
+
+      a {
+        color: var(--link-color);
+      }
+
+      code {
+        color: var(--contrast-color);
+        font-family: ui-monospace, monospace;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>How Fugu is my browser?</h1>
+
+      <p>
+        The cross-company effort
+        <a href="https://web.dev/fugu-status/">Project Fugu</a> has the
+        objective of making it possible for Web apps to do
+        <em>anything</em> iOS, Android, or desktop apps can.
+      </p>
+      <p>
+        We do this by exposing the capabilities of these platforms to the Web,
+        all while maintaining user security, privacy, trust, and other core
+        tenets of the Web.
+      </p>
+      <p>
+        Find out <code>when you are back online</code> where on this exciting
+        journey your current browser is!
+      </p>
+      <footer>
+        Made by
+        <a href="https://twitter.com/tomayac">@tomayac</a>. Source code on
+        <a href="https://github.com/tomayac/how-fugu-is-my-browser">GitHub</a>.
+      </footer>
+    </main>
+  </body>
+</html>
