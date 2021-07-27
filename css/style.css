@@ -85,11 +85,11 @@ button:active {
 }
 
 .ios {
-  background-image: url(/assets/share-ios.svg);
+  background-image: url(/share-ios.svg);
 }
 
 .others {
-  background-image: url(/assets/share-others.svg);
+  background-image: url(/share-others.svg);
 }
 
 img {
