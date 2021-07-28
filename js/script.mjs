@@ -10,6 +10,17 @@ const code = document.querySelector('code');
 let totalValues = 0;
 let trueValues = 0;
 
+const getSVGCode = (path) => {
+  return `<svg width="100%" height="25" xmlns="http://www.w3.org/2000/svg">
+      <style>
+        path {
+          stroke: currentColor;
+        }
+      </style>
+      <path d="${path}"/>
+    </svg>`;
+};
+
 window.addEventListener('load', async () => {
   if ('serviceWorker' in navigator) {
     // Some of the feature detection tests ideally need a service worker.
@@ -57,8 +68,10 @@ window.addEventListener('load', async () => {
     tbody.append(tr);
     const td1 = document.createElement('td');
     const td2 = document.createElement('td');
+    const td3 = document.createElement('td');
     tr.append(td1);
     tr.append(td2);
+    tr.append(td3);
     const a = document.createElement('a');
     a.textContent = api;
     a.href = value.documentation;
@@ -69,6 +82,10 @@ window.addEventListener('load', async () => {
       : value.supported === undefined
       ? '🤷 Unknown'
       : '🚫 No';
+    console.log(value);
+    td3.innerHTML = `<a href="https://chromestatus.com/metrics/feature/timeline/popularity/${
+      value.blinkFeatureID
+    }">${getSVGCode(value.sparkLine)}</a>`;
   }
   tbody.parentNode.hidden = false;
 
