@@ -1,8 +1,11 @@
 import patterns from 'fugu-api-data/patterns';
-import sparkline from '@fnando/sparkline';
+import { sparkline } from '@fnando/sparkline';
 
-const CHROME_STATUS_URL =
+const CHROME_STATUS_API_URL =
   'https://chromestatus.com/data/timeline/featurepopularity?bucket_id=';
+const CHROME_STATUS_POPULARITY_URL =
+  'https://chromestatus.com/metrics/feature/timeline/popularity/';
+
 const NO_DATA = 'No data';
 
 // DOM references.
@@ -16,9 +19,29 @@ const template = document.querySelector('template');
 let totalValues = 0;
 let trueValues = 0;
 
+const onmousemove = (event, datapoint) => {
+  const svg = event.target.closest('svg');
+  const tooltip = svg.nextElementSibling;
+  const date = new Date(datapoint.date).toLocaleDateString(undefined, {
+    year: 'numeric',
+    month: 'short',
+    day: 'numeric',
+  });
+  tooltip.hidden = false;
+  tooltip.textContent = `On ${date} on ${datapoint.value.toFixed(6)}% of pages`;
+  tooltip.style.top = `${event.offsetY}px`;
+  tooltip.style.left = `${event.offsetX + 20}px`;
+};
+
+const onmouseout = (event) => {
+  const svg = event.target.closest('svg');
+  const tooltip = svg.nextElementSibling;
+  tooltip.hidden = true;
+};
+
 const getSVGCode = async (svg, blinkFeatureID) => {
-  let data = await fetch(CHROME_STATUS_URL + blinkFeatureID).then((response) =>
-    response.json(),
+  let data = await fetch(CHROME_STATUS_API_URL + blinkFeatureID).then(
+    (response) => response.json(),
   );
   data = data.map((item) => {
     return {
@@ -33,26 +56,8 @@ const getSVGCode = async (svg, blinkFeatureID) => {
     return;
   }
   sparkline(svg, data, {
-    onmousemove(event, datapoint) {
-      const svg = event.target.closest('svg');
-      const tooltip = svg.nextElementSibling;
-      const date = new Date(datapoint.date).toLocaleDateString(undefined, {
-        year: 'numeric',
-        month: 'short',
-        day: 'numeric',
-      });
-      tooltip.hidden = false;
-      tooltip.textContent = `On ${date} on ${datapoint.value.toFixed(
-        6,
-      )}% of pages`;
-      tooltip.style.top = `${event.offsetY}px`;
-      tooltip.style.left = `${event.offsetX + 20}px`;
-    },
-    onmouseout(event) {
-      const svg = event.target.closest('svg');
-      const tooltip = svg.nextElementSibling;
-      tooltip.hidden = true;
-    },
+    onmousemove,
+    onmouseout,
   });
   svg.setAttribute('width', '100%');
   svg.setAttribute('height', '100%');
@@ -124,7 +129,7 @@ window.addEventListener('load', async () => {
       const svg = clone.querySelector('svg');
       const tooltip = clone.querySelector('span');
       const link = document.createElement('a');
-      link.href = `https://chromestatus.com/metrics/feature/timeline/popularity/${value.blinkFeatureID}`;
+      link.href = `${CHROME_STATUS_POPULARITY_URL}${value.blinkFeatureID}`;
       td3.append(link);
       link.append(svg);
       link.append(tooltip);
