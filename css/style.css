@@ -47,6 +47,10 @@ a {
   color: var(--link-color);
 }
 
+a:hover {
+  color: var(--contrast-color);
+}
+
 /* just the line */
 .sparkline {
   stroke: var(--main-color);
@@ -145,11 +149,16 @@ thead {
 
 th {
   padding-block: 0.5rem;
+  font-weight: normal;
 }
 
 td {
   padding-block: 0.25rem;
   position: relative;
+}
+
+tr > td:last-child {
+  height: 3rem;
 }
 
 tbody > tr:nth-of-type(2n) {
