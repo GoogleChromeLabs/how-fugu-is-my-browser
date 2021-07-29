@@ -47,8 +47,31 @@ a {
   color: var(--link-color);
 }
 
-a > svg {
+/* just the line */
+.sparkline {
+  stroke: var(--main-color);
+  fill: none;
+}
+
+/* change the spot color */
+.sparkline--spot {
+  stroke: var(--contrast-color);
+  fill: var(--contrast-color);
+}
+
+/* change the cursor color */
+.sparkline--cursor {
+  stroke: var(--contrast-color);
+}
+
+.tooltip {
+  position: absolute;
+  background-color: var(--main-background-color);
   color: var(--main-color);
+  padding: 2px 5px;
+  font-size: 12px;
+  white-space: nowrap;
+  z-index: 9999;
 }
 
 .wrapper {
@@ -126,6 +149,7 @@ th {
 
 td {
   padding-block: 0.25rem;
+  position: relative;
 }
 
 tbody > tr:nth-of-type(2n) {

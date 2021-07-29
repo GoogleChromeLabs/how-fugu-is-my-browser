@@ -65,7 +65,7 @@
           <tr>
             <th>API Name</th>
             <th>Supported</th>
-            <th>Popularity (last 90d)</th>
+            <th>% of Page Loads</th>
           </tr>
         </thead>
         <tbody></tbody>
@@ -76,6 +76,17 @@
         <a href="https://twitter.com/tomayac">@tomayac</a>. Source code on
         <a href="https://github.com/tomayac/how-fugu-is-my-browser">GitHub</a>.
       </footer>
+
+      <template>
+        <svg
+          class="sparkline"
+          viewBox="0 0 200 60"
+          width="200"
+          height="60"
+          stroke-width="1"
+        ></svg>
+        <span class="tooltip" hidden></span>
+      </template>
     </main>
   </body>
 </html>

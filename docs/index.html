@@ -17,9 +17,9 @@
     <link rel="manifest" href="/assets/manifest.9256e8a4.webmanifest" />
     
     <base target="_blank" />
-    <script type="module" crossorigin src="/assets/main.f3a499e3.js"></script>
-    <link rel="modulepreload" href="/assets/vendor.c87b0c02.js">
-    <link rel="stylesheet" href="/assets/main.b85fb11f.css">
+    <script type="module" crossorigin src="/assets/main.81d0aa05.js"></script>
+    <link rel="modulepreload" href="/assets/vendor.bf730d6e.js">
+    <link rel="stylesheet" href="/assets/main.ecee4e4f.css">
   </head>
   <body>
     <main>
@@ -68,7 +68,7 @@
           <tr>
             <th>API Name</th>
             <th>Supported</th>
-            <th>Popularity (last 90d)</th>
+            <th>% of Page Loads</th>
           </tr>
         </thead>
         <tbody></tbody>
@@ -79,6 +79,17 @@
         <a href="https://twitter.com/tomayac">@tomayac</a>. Source code on
         <a href="https://github.com/tomayac/how-fugu-is-my-browser">GitHub</a>.
       </footer>
+
+      <template>
+        <svg
+          class="sparkline"
+          viewBox="0 0 200 60"
+          width="200"
+          height="60"
+          stroke-width="1"
+        ></svg>
+        <span class="tooltip" hidden></span>
+      </template>
     </main>
   </body>
 </html>
