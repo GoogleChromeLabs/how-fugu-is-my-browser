@@ -96,6 +96,13 @@ const createScreenshot = async (clone) => {
       td.parentNode.remove();
     }
   });
+  // Hide the sparkline.
+  clone.querySelectorAll('tr > th:nth-child(3)').forEach((th) => {
+    th.style.display = 'none';
+  });
+  clone.querySelectorAll('tr > td:nth-child(3)').forEach((td) => {
+    td.style.display = 'none';
+  });
   // Use standard `monospace` font instead of `ui-monospace`.
   clone.querySelectorAll('code').forEach((code) => {
     code.style.fontFamily = 'monospace';
