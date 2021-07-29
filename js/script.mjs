@@ -61,6 +61,7 @@ const getSVGCode = async (svg, blinkFeatureID) => {
   });
   svg.setAttribute('width', '100%');
   svg.setAttribute('height', '100%');
+  svg.style.display = 'block';
 };
 
 window.addEventListener('load', async () => {
@@ -127,6 +128,7 @@ window.addEventListener('load', async () => {
     if (value.blinkFeatureID) {
       const clone = template.content.cloneNode(true);
       const svg = clone.querySelector('svg');
+      svg.style.display = 'none';
       const tooltip = clone.querySelector('span');
       const link = document.createElement('a');
       link.href = `${CHROME_STATUS_POPULARITY_URL}${value.blinkFeatureID}`;
