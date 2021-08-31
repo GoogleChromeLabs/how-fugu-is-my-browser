@@ -158,7 +158,8 @@ td {
 }
 
 tr > td:last-child {
-  height: 3rem;
+  width: 100px;
+  height: 2.75rem;
 }
 
 tbody > tr:nth-of-type(2n) {
