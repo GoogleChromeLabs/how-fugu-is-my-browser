@@ -3,7 +3,7 @@
   --main-color: #111;
   --table-alternate-color: #eee;
   --table-hover-color: #ddd;
-  --link-color: rgb(0, 0, 238);
+  --link-color: rgb(0 0 238);
   --contrast-color: deeppink;
 
   color-scheme: dark light;
@@ -15,7 +15,7 @@
     --main-color: #eee;
     --table-alternate-color: #222;
     --table-hover-color: #333;
-    --link-color: rgb(158, 158, 255);
+    --link-color: rgb(158 158 255);
   }
 }
 
@@ -58,12 +58,14 @@ a:hover {
 }
 
 /* change the spot color */
+/* stylelint-disable-next-line selector-class-pattern */
 .sparkline--spot {
   stroke: var(--contrast-color);
   fill: var(--contrast-color);
 }
 
 /* change the cursor color */
+/* stylelint-disable-next-line selector-class-pattern */
 .sparkline--cursor {
   stroke: var(--contrast-color);
 }
@@ -100,8 +102,6 @@ button {
   cursor: pointer;
   text-align: center;
   transition: background 250ms ease-in-out, transform 150ms ease;
-  -webkit-appearance: none;
-  -moz-appearance: none;
   appearance: none;
   background-repeat: no-repeat;
   width: 8rem;
@@ -116,11 +116,11 @@ button:active {
 }
 
 .ios {
-  background-image: url(/share-ios.svg);
+  background-image: url('/share-ios.svg');
 }
 
 .others {
-  background-image: url(/share-others.svg);
+  background-image: url('/share-others.svg');
 }
 
 img {
@@ -192,10 +192,7 @@ meter {
 .meter > span {
   display: block;
   height: 100%;
-  border-top-right-radius: 2px;
-  border-bottom-right-radius: 2px;
-  border-top-left-radius: 4px;
-  border-bottom-left-radius: 4px;
+  border-radius: 4px 2px 2px 4px;
 }
 
 .meter.green > span {
