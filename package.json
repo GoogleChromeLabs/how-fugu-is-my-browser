@@ -13,7 +13,8 @@
     "lint:js": "npx eslint . --ext .js,.mjs --fix --ignore-pattern docs/",
     "lint:css": "npx stylelint \"**/*.css\" --fix",
     "fix": "npx prettier . --write",
-    "deploy": "npm run lint && npm run fix && npm run build && git commit -a -m \"Deploy\" && git push"
+    "deploy": "npm run lint && npm run fix && npm run build && git commit -a -m \"Deploy\" && git push",
+    "oculus": "ovr-platform-util create-pwa -o output.apk --android-sdk ~/bin/android-10 --manifest-content-file manifest.webmanifest --package-name dev.howfuguismybrowser"
   },
   "repository": {
     "type": "git",
@@ -30,7 +31,7 @@
   "homepage": "https://github.com/tomayac/how-fugu-is-my-browser#readme",
   "devDependencies": {
     "@rollup/plugin-dynamic-import-vars": "^1.4.1",
-    "eslint": "^8.1.0",
+    "eslint": "^8.2.0",
     "eslint-config-google": "^0.14.0",
     "eslint-config-prettier": "^8.3.0",
     "find-unused-exports": "^2.0.0",
