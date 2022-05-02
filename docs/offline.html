@@ -11,8 +11,61 @@
     />
     <title>How Fugu is my browser?</title>
     <base target="_blank" />
-    
-    <link rel="stylesheet" href="/assets/offline.6b946ea6.css">
+    <style>
+      :root {
+        --main-background-color: #fff;
+        --main-color: #111;
+        --table-alternate-color: #eee;
+        --table-hover-color: #ddd;
+        --link-color: rgb(0, 0, 238);
+        --contrast-color: deeppink;
+
+        color-scheme: dark light;
+      }
+
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --main-background-color: #111;
+          --main-color: #eee;
+          --table-alternate-color: #222;
+          --table-hover-color: #333;
+          --link-color: rgb(158, 158, 255);
+        }
+      }
+
+      html,
+      body {
+        color: var(--main-color);
+        background-color: var(--main-background-color);
+      }
+
+      html {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      body {
+        width: 60ch;
+        max-width: 60ch;
+        font-family: system-ui, sans-serif;
+        margin-block: 1rem;
+      }
+
+      h1 {
+        color: var(--contrast-color);
+        font-size: 1.25rem;
+      }
+
+      a {
+        color: var(--link-color);
+      }
+
+      code {
+        color: var(--contrast-color);
+        font-family: ui-monospace, monospace;
+      }
+    </style>
   </head>
   <body>
     <main>
