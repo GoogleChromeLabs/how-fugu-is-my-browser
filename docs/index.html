@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#fff" />
+    <meta
+      name="theme-color"
+      content="#111"
+      media="(prefers-color-scheme: dark)"
+    />
+    <title>How Fugu is my browser?</title>
+    
+    <link rel="icon" href="/fugu.svg" />
+    <link rel="apple-touch-icon" href="/fugu.png" />
+    <link rel="canonical" href="https://howfuguismybrowser.dev/" />
+    <link rel="manifest" href="/assets/manifest.88946d8e.webmanifest" />
+    
+    <base target="_blank" />
+    <script type="module" crossorigin src="/assets/main.3427a848.js"></script>
+    <link rel="stylesheet" href="/assets/main.2fb8f66a.css">
+  </head>
+  <body>
+    <main>
+      <h1>How Fugu is my browser?</h1>
+
+      <p>
+        The cross-company effort
+        <a href="https://web.dev/fugu-status/">Project Fugu</a> has the
+        objective of making it possible for Web apps to do
+        <em>anything</em> iOS, Android, or desktop apps can.
+      </p>
+      <p>
+        We do this by exposing the capabilities of these platforms to the Web,
+        all while maintaining user security, privacy, trust, and other core
+        tenets of the Web.
+      </p>
+      <p>
+        Find out below where on this exciting journey your current browser is!
+      </p>
+
+      <div class="wrapper">
+        <div>
+          <img
+            src="/fugu.png"
+            width="64"
+            height="64"
+            alt="A blowfish, the Project Fugu logo."
+          />
+          <meter id="meter"></meter>
+
+          <div hidden class="meter">
+            <span></span>
+          </div>
+        </div>
+        <button type="button">Share</button>
+      </div>
+
+      <p class="message" hidden>
+        My browser—<code></code>—is
+        <label for="meter"></label>
+        Fugu!
+      </p>
+
+      <table hidden>
+        <thead>
+          <tr>
+            <th>Feature Name</th>
+            <th>Supported in Browser</th>
+            <th>%&nbsp;of Page Loads</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+
+      <footer>
+        Made by
+        <a href="https://twitter.com/tomayac">@tomayac</a>. Source code on
+        <a href="https://github.com/tomayac/how-fugu-is-my-browser">GitHub</a>.
+      </footer>
+
+      <template>
+        <svg
+          class="sparkline"
+          viewBox="0 0 100 30"
+          width="100"
+          height="30"
+          stroke-width="1"
+        ></svg>
+        <span class="tooltip" hidden></span>
+      </template>
+    </main>
+  </body>
+</html>
