@@ -32,7 +32,7 @@
   "homepage": "https://github.com/tomayac/how-fugu-is-my-browser#readme",
   "devDependencies": {
     "@rollup/plugin-dynamic-import-vars": "^1.4.3",
-    "eslint": "^8.17.0",
+    "eslint": "^8.18.0",
     "eslint-config-google": "^0.14.0",
     "eslint-config-prettier": "^8.5.0",
     "find-unused-exports": "^3.0.0",
@@ -40,7 +40,7 @@
     "html2canvas": "^1.4.1",
     "http-server": "^14.1.1",
     "https-localhost": "^4.7.1",
-    "prettier": "^2.7.0",
+    "prettier": "^2.7.1",
     "pwacompat": "^2.0.17",
     "shx": "^0.3.4",
     "stylelint": "^14.9.1",
