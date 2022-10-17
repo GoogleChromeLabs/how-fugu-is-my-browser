@@ -98,11 +98,13 @@ a:hover {
   gap: 1rem;
 }
 
-button {
+.share,
+.screenshot {
   visibility: hidden;
   display: inline-block;
   border: none;
-  padding-inline: 1rem;
+  padding-inline: 0.5rem;
+  padding-inline-start: 42px;
   margin: 0;
   text-decoration: none;
   background-color: dodgerblue;
@@ -117,7 +119,7 @@ button {
   transition: background 250ms ease-in-out, transform 150ms ease;
   appearance: none;
   background-repeat: no-repeat;
-  width: 8rem;
+  min-width: 7rem;
 }
 
 button:hover {
@@ -134,6 +136,10 @@ button:active {
 
 .others {
   background-image: url('/share-others.svg');
+}
+
+.screenshot {
+  background-image: url('/screenshot.svg');
 }
 
 img {

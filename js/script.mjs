@@ -177,9 +177,7 @@ window.addEventListener('load', async () => {
 
   code.textContent = navigator.userAgent;
 
-  if ('share' in navigator) {
-    import('/js/share.mjs');
-  }
+  import('/js/share.mjs');
 
   if (/Apple/.test(navigator.vendor)) {
     import('pwacompat');

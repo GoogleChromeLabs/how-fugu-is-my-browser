@@ -13,7 +13,8 @@
 
 import html2canvas from 'html2canvas';
 
-const button = document.querySelector('button');
+const shareButton = document.querySelector('button.share');
+const screenshotButton = document.querySelector('button.screenshot');
 const label = document.querySelector('label');
 const fakeMeter = document.querySelector('.meter');
 
@@ -35,38 +36,46 @@ const shareTextOnly = async (shareData) => {
   }
 };
 
-button.addEventListener('click', async () => {
-  /* eslint-disable no-irregular-whitespace */
-  const message = `🙋 My browser…
+shareButton.addEventListener('click', async () => {
+  // Cap the userAgent at 135 characters (just enough for Edge's.)
+  const message = `🙋 My browser…
 
-👉 \`${navigator.userAgent.substr(0, 120)}\` 👈
+👉 \`${navigator.userAgent.substring(0, 135)}\` 👈
 
-…is ${
+…is ${
     fakeMeter.classList.contains('green')
       ? '🟩'
       : fakeMeter.classList.contains('red')
       ? '🟥'
       : '🟧'
-  } ${label.textContent} Fugu 🐡!
+  } ${label.textContent} Fugu 🐡!
 
-How Fugu 🐡 is yours? Find out at ${canonical} and share on #HowFuguIsMyBrowser!`.trim();
+How Fugu 🐡 is yours? Find out at ${canonical} and share on #HowFuguIsMyBrowser!`.trim();
   /* eslint-enable no-irregular-whitespace */
 
-  const shareData = {
-    text: message,
-    title: '',
-    files,
-  };
-  if (!navigator.canShare(shareData)) {
-    return shareTextOnly(shareData);
-  }
-  try {
-    await navigator.share(shareData);
-  } catch (err) {
-    if (err.name !== 'AbortError') {
-      console.error(err.name, err.message);
-      shareTextOnly(shareData);
+  if ('share' in navigator) {
+    const shareData = {
+      text: message,
+      title: '',
+      files,
+    };
+    if (!navigator.canShare(shareData)) {
+      return shareTextOnly(shareData);
     }
+    try {
+      await navigator.share(shareData);
+    } catch (err) {
+      if (err.name !== 'AbortError') {
+        console.error(err.name, err.message);
+        shareTextOnly(shareData);
+      }
+    }
+  } else {
+    const shareURL = new URL('https://twitter.com/intent/tweet');
+    const params = new URLSearchParams();
+    params.append('text', message);
+    shareURL.search = params;
+    window.open(shareURL, '_blank', 'popup,noreferrer,noopener');
   }
 });
 
@@ -142,7 +151,27 @@ const createScreenshot = async (clone) => {
   clone.remove();
   files = [new File([blob], 'howfuguismybrowser_dev.png', { type: blob.type })];
   /Apple/.test(navigator.vendor)
-    ? button.classList.add('ios')
-    : button.classList.add('others');
-  button.style.visibility = 'visible';
+    ? shareButton.classList.add('ios')
+    : shareButton.classList.add('others');
+  shareButton.style.visibility = 'visible';
+  if (!('share' in navigator)) {
+    document.querySelector('ol').style.display = 'block';
+    screenshotButton.style.visibility = 'visible';
+    // Fallback to use Twitter's Web Intent URL, as outlined in
+    // https://web.dev/patterns/advanced-apps/share/.
+    screenshotButton.addEventListener('click', () => {
+      const a = document.createElement('a');
+      a.download = 'how-fugu-is-my-browser.png';
+      a.style.display = 'none';
+      a.href = URL.createObjectURL(files[0]);
+      document.body.appendChild(a);
+      a.click();
+      setTimeout(() => {
+        document.body.remove(a);
+        URL.revokeObjectURL(a.href);
+      }, 30 * 1000);
+    });
+  } else {
+    screenshotButton.style.display = 'none';
+  }
 })();
