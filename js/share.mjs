@@ -155,7 +155,7 @@ const createScreenshot = async (clone) => {
     : shareButton.classList.add('others');
   shareButton.style.visibility = 'visible';
   if (!('share' in navigator)) {
-    document.querySelector('ol').style.display = 'block';
+    document.querySelector('ol').style.visibility = 'visible';
     screenshotButton.style.visibility = 'visible';
     // Fallback to use Twitter's Web Intent URL, as outlined in
     // https://web.dev/patterns/advanced-apps/share/.

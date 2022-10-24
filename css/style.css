@@ -98,6 +98,10 @@ a:hover {
   gap: 1rem;
 }
 
+ol {
+  visibility: hidden;
+}
+
 .share,
 .screenshot {
   visibility: hidden;
