@@ -225,3 +225,8 @@ meter {
 .meter.red > span {
   background-color: red;
 }
+
+.legend {
+  font-size: 0.75rem;
+  text-align: start;
+}
