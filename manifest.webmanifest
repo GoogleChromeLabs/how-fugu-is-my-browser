@@ -30,28 +30,28 @@
   ],
   "screenshots": [
     {
-      "src": "wide_light.png",
+      "src": "https://howfuguismybrowser.dev/wide_light.png",
       "sizes": "1341x869",
       "type": "image/png",
       "platform": "wide",
       "label": "Desktop (light mode)"
     },
     {
-      "src": "wide_dark.png",
+      "src": "https://howfuguismybrowser.dev/wide_dark.png",
       "sizes": "1341x869",
       "type": "image/png",
       "platform": "wide",
       "label": "Desktop (dark mode)"
     },
     {
-      "src": "narrow_light.png",
+      "src": "https://howfuguismybrowser.dev/narrow_light.png",
       "sizes": "1081x2162",
       "type": "image/png",
       "platform": "narrow",
       "label": "Mobile (light mode)"
     },
     {
-      "src": "narrow_dark.png",
+      "src": "https://howfuguismybrowser.dev/narrow_dark.png",
       "sizes": "1081x2162",
       "type": "image/png",
       "platform": "narrow",
