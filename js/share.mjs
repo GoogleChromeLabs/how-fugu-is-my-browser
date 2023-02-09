@@ -90,6 +90,9 @@ const createScreenshot = async (clone) => {
   const backgroundColor = computedStyle.getPropertyValue(
     '--main-background-color',
   );
+  clone.querySelectorAll('.legend').forEach((legend) => {
+    legend.style.display = 'none';
+  });
   const canvas = await html2canvas(clone, {
     backgroundColor,
   });

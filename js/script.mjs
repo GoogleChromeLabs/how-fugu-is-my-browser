@@ -174,12 +174,9 @@ window.addEventListener('load', async () => {
 
   label.textContent = percentage;
   label.parentNode.hidden = false;
+  document.querySelector('[hidden].legend').hidden = false;
 
   code.textContent = navigator.userAgent;
 
   import('/js/share.mjs');
-
-  if (/Apple/.test(navigator.vendor)) {
-    import('pwacompat');
-  }
 });
