@@ -32,20 +32,20 @@
   "homepage": "https://github.com/tomayac/how-fugu-is-my-browser#readme",
   "devDependencies": {
     "@rollup/plugin-dynamic-import-vars": "^2.0.3",
-    "eslint": "^8.35.0",
+    "eslint": "^8.36.0",
     "eslint-config-google": "^0.14.0",
-    "eslint-config-prettier": "^8.6.0",
+    "eslint-config-prettier": "^8.8.0",
     "find-unused-exports": "^5.0.0",
-    "fugu-api-data": "^1.14.1",
+    "fugu-api-data": "^1.15.0",
     "html2canvas": "^1.4.1",
     "http-server": "^14.1.1",
     "https-localhost": "^4.7.1",
-    "prettier": "^2.8.4",
+    "prettier": "^2.8.6",
     "shx": "^0.3.4",
-    "stylelint": "^15.2.0",
-    "stylelint-config-standard": "^30.0.1",
-    "stylelint-order": "^6.0.2",
-    "vite": "^4.1.4"
+    "stylelint": "^15.3.0",
+    "stylelint-config-standard": "^31.0.0",
+    "stylelint-order": "^6.0.3",
+    "vite": "^4.2.1"
   },
   "eslintConfig": {
     "parserOptions": {
