@@ -120,7 +120,9 @@ ol {
   font-size: inherit;
   cursor: pointer;
   text-align: center;
-  transition: background 250ms ease-in-out, transform 150ms ease;
+  transition:
+    background 250ms ease-in-out,
+    transform 150ms ease;
   appearance: none;
   background-repeat: no-repeat;
   min-width: 7rem;
