@@ -136,8 +136,8 @@ window.addEventListener('load', async () => {
     td2.textContent = value.supported
       ? '✅ Yes'
       : value.supported === undefined
-      ? '🤷 Unknown'
-      : '🚫 No';
+        ? '🤷 Unknown'
+        : '🚫 No';
     if (value.blinkFeatureID) {
       const clone = template.content.cloneNode(true);
       const svg = clone.querySelector('svg');

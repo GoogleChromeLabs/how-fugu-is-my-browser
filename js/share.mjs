@@ -46,8 +46,8 @@ shareButton.addEventListener('click', async () => {
     fakeMeter.classList.contains('green')
       ? '🟩'
       : fakeMeter.classList.contains('red')
-      ? '🟥'
-      : '🟧'
+        ? '🟥'
+        : '🟧'
   } ${label.textContent} Fugu 🐡!
 
 How Fugu 🐡 is yours? Find out at ${canonical} and share on #HowFuguIsMyBrowser!`.trim();
