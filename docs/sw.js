@@ -16,8 +16,6 @@
  * limitations under the License.
  */
 
-// eslint-disable-next-line no-unused-vars
-const OFFLINE_VERSION = 1;
 const CACHE_NAME = 'offline';
 // Customize this with a different URL if needed.
 const OFFLINE_URL = './offline.html';
@@ -66,7 +64,7 @@ self.addEventListener('fetch', (event) => {
           // Always try the network first.
           const networkResponse = await fetch(event.request);
           return networkResponse;
-        } catch (error) {
+        } catch {
           const cache = await caches.open(CACHE_NAME);
           const cachedResponse = await cache.match(OFFLINE_URL);
           return cachedResponse;

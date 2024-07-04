@@ -51,7 +51,6 @@ shareButton.addEventListener('click', async () => {
   } ${label.textContent} Fugu 🐡!
 
 How Fugu 🐡 is yours? Find out at ${canonical} and share on #HowFuguIsMyBrowser!`.trim();
-  /* eslint-enable no-irregular-whitespace */
 
   if ('share' in navigator) {
     const shareData = {
